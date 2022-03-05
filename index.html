@@ -1,16 +1,46 @@
-<html>
-    <head>
-    <script src="script.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIC</title>
     <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
+</head>
+
+<body>
+    <div class="maindiv">
         <h1>Simple Interest Calculator</h1>
+        Amount
+        <input type="number" value="0" onchange="updateVal(this.value)" id="principal" class="">
+        <br>
+        Rate
+        <input type="range" min="1" max="20" id="rate" step="0.25" onchange="displaySlider(this.value)"><span
+            id="slidervalue">10.25 %</span>
+        <br>
+        <label for="years">No. of years :</label>
+        <select name="years" id="years" onchange="updateDrop(this.value)">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+        <br>
+        Interest : <span id="result">If you deposit 10,
+            at an interest rate of 10.5%.
+            You will receive an amount of 3.15,
+            in the year 2025</span><br>
 
-        Amount <input type="number"  id="principal">  <br/>
-        Rate <input type="number"  id="rate">  <br/>
-        No. of Years <input type="number"  id="years">  <br/>
-        Interest : <span id="result"></span><br>
+        <button onclick="compute()">Compute Interest</button>
+        <footer>
+            <br>
+            &#169; This Calculator belongs to Me
+        </footer>
+    </div>
 
-        <button onclick="compute()">Compute</button>
-    </body>
+    <script src="script.js"></script>
+</body>
+
 </html>
